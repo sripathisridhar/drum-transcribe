@@ -13,11 +13,11 @@ def main():
     input_shape = () #GET INPUT SHAPE 
     
     model = Sequential()
-    model.add(Conv2D(10, (7, 3), activation='relu'))
+    model.add(Conv2D(10, (7, 3), input_shape=input_shape, activation='relu'))
     model.add(MaxPool2D((1, 3)))
     model.add(Conv2D(20, (3, 3), activation='relu'))
     model.add(MaxPool2D((1, 3)))
-    model.add(Dense(256))
+    model.add(Dense(256, activation='softmax'))
 
 if __name__ == "__main__" : 
     main()
